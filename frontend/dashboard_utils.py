@@ -105,6 +105,9 @@ class LocalApiClient(ApiClient):
         # Load backend/app.py under its own name: frontend/app.py is also "app".
         spec = importlib.util.spec_from_file_location("ecg_backend_app", backend_dir / "app.py")
         module = importlib.util.module_from_spec(spec)
+        # Register before running it: Pydantic/FastAPI resolve the module's
+        # (postponed) type annotations by looking the module up in sys.modules.
+        sys.modules[spec.name] = module
         spec.loader.exec_module(module)
         self.base_url = "in-process"
         self.timeout = None
