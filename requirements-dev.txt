@@ -1,0 +1,6 @@
+# Everything needed to train, test and run both services locally.
+-r backend/requirements.txt
+-r frontend/requirements.txt
+pytest>=8.0
+httpx>=0.27          # required by fastapi.testclient
+# xgboost           # optional: uncomment to also train an XGBoost model

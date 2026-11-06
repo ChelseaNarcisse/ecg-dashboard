@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/models:/app/models      # swap in retrained models without rebuilding
+      - prediction-history:/app/data      # SQLite batch history survives restarts
+    environment:
+      - DEFAULT_MODEL=hgb
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - API_URL=http://backend:8000
+
+volumes:
+  prediction-history:
