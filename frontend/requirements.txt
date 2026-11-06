@@ -1,0 +1,13 @@
+streamlit>=1.39
+plotly>=5.24
+requests>=2.32
+# Backend packages: the dashboard can run the FastAPI app in-process
+# (Streamlit Community Cloud). Pins match backend/requirements.txt - the
+# .pkl models need the exact scikit-learn version they were trained with.
+fastapi>=0.115
+httpx>=0.27
+pydantic==2.13.5
+numpy==2.5.3
+pandas==3.0.5
+scikit-learn==1.9.1
+joblib==1.6.0

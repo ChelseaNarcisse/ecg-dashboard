@@ -1,0 +1,9 @@
+# Versions match the environment the .pkl models were trained in.
+# scikit-learn MUST match the training version, or re-run training/train_models.py.
+fastapi>=0.115
+uvicorn[standard]==0.54.0
+pydantic==2.13.5
+numpy==2.5.3
+pandas==3.0.5
+scikit-learn==1.9.1
+joblib==1.6.0

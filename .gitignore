@@ -4,7 +4,7 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 # Raw Kaggle data is large - download it yourself (see README)
-data/raw/**/*.csv
+data/raw/*.csv
 # SQLite prediction history
 backend/data/
 *.db

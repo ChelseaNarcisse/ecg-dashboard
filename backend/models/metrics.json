@@ -1,0 +1,924 @@
+{
+  "models": {
+    "rules": {
+      "display_name": "Rule-based triage (fallback)",
+      "inter_patient": {
+        "accuracy": 0.8897,
+        "balanced_accuracy": 0.4998,
+        "macro_f1": 0.4382,
+        "weighted_f1": 0.8935,
+        "per_class": {
+          "N": {
+            "precision": 0.9701,
+            "recall": 0.947,
+            "f1-score": 0.9584,
+            "support": 44238.0
+          },
+          "SVEB": {
+            "precision": 0.2755,
+            "recall": 0.781,
+            "f1-score": 0.4073,
+            "support": 1836.0
+          },
+          "VEB": {
+            "precision": 0.6767,
+            "recall": 0.271,
+            "f1-score": 0.3871,
+            "support": 3221.0
+          },
+          "F": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 388.0
+          },
+          "Q": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            41895,
+            2004,
+            339,
+            0,
+            0
+          ],
+          [
+            324,
+            1434,
+            78,
+            0,
+            0
+          ],
+          [
+            583,
+            1765,
+            873,
+            0,
+            0
+          ],
+          [
+            385,
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "N",
+          "SVEB",
+          "VEB",
+          "F",
+          "Q"
+        ],
+        "abnormal_auc": 0.8549
+      }
+    },
+    "logistic": {
+      "display_name": "Logistic Regression",
+      "inter_patient": {
+        "accuracy": 0.7249,
+        "balanced_accuracy": 0.5268,
+        "macro_f1": 0.458,
+        "weighted_f1": 0.8046,
+        "per_class": {
+          "N": {
+            "precision": 0.9684,
+            "recall": 0.738,
+            "f1-score": 0.8377,
+            "support": 44238.0
+          },
+          "SVEB": {
+            "precision": 0.1236,
+            "recall": 0.2255,
+            "f1-score": 0.1597,
+            "support": 1836.0
+          },
+          "VEB": {
+            "precision": 0.7513,
+            "recall": 0.8861,
+            "f1-score": 0.8131,
+            "support": 3221.0
+          },
+          "F": {
+            "precision": 0.0113,
+            "recall": 0.2577,
+            "f1-score": 0.0217,
+            "support": 388.0
+          },
+          "Q": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            32647,
+            2723,
+            312,
+            8556,
+            0
+          ],
+          [
+            983,
+            414,
+            385,
+            54,
+            0
+          ],
+          [
+            44,
+            210,
+            2854,
+            113,
+            0
+          ],
+          [
+            37,
+            3,
+            248,
+            100,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "N",
+          "SVEB",
+          "VEB",
+          "F",
+          "Q"
+        ],
+        "abnormal_auc": 0.8941,
+        "train_seconds": 1.6
+      },
+      "feature_importance": [
+        {
+          "feature": "qtc_bazett_ms",
+          "importance": 0.12666,
+          "std": 0.0032,
+          "engineered": true
+        },
+        {
+          "feature": "1_qrs_morph3",
+          "importance": 0.11719,
+          "std": 0.00845,
+          "engineered": false
+        },
+        {
+          "feature": "1_qrs_morph1",
+          "importance": 0.08433,
+          "std": 0.00464,
+          "engineered": false
+        },
+        {
+          "feature": "rr_norm_local",
+          "importance": 0.05417,
+          "std": 0.00566,
+          "engineered": true
+        },
+        {
+          "feature": "0_qrs_morph3",
+          "importance": 0.04969,
+          "std": 0.00823,
+          "engineered": false
+        },
+        {
+          "feature": "0_rPeak",
+          "importance": 0.04508,
+          "std": 0.00154,
+          "engineered": false
+        },
+        {
+          "feature": "1_qrs_morph2",
+          "importance": 0.04162,
+          "std": 0.00107,
+          "engineered": false
+        },
+        {
+          "feature": "rr_norm_record",
+          "importance": 0.04156,
+          "std": 0.01256,
+          "engineered": true
+        },
+        {
+          "feature": "0_qrs_morph1",
+          "importance": 0.03744,
+          "std": 0.0035,
+          "engineered": false
+        },
+        {
+          "feature": "lead_r_diff",
+          "importance": 0.03095,
+          "std": 0.00269,
+          "engineered": true
+        },
+        {
+          "feature": "0_qPeak",
+          "importance": 0.02978,
+          "std": 0.00759,
+          "engineered": false
+        },
+        {
+          "feature": "post_rr_norm_local",
+          "importance": 0.02578,
+          "std": 0.00284,
+          "engineered": true
+        },
+        {
+          "feature": "1_pPeak",
+          "importance": 0.0209,
+          "std": 0.00246,
+          "engineered": false
+        },
+        {
+          "feature": "heart_rate_bpm",
+          "importance": 0.01958,
+          "std": 0.00151,
+          "engineered": true
+        },
+        {
+          "feature": "local_rr_mean_ms",
+          "importance": 0.01915,
+          "std": 0.00448,
+          "engineered": true
+        },
+        {
+          "feature": "1_qrs_morph4",
+          "importance": 0.01745,
+          "std": 0.00727,
+          "engineered": false
+        },
+        {
+          "feature": "1_qrs_slope",
+          "importance": 0.01651,
+          "std": 0.00057,
+          "engineered": true
+        },
+        {
+          "feature": "1_r_s_ratio",
+          "importance": 0.01527,
+          "std": 0.00077,
+          "engineered": true
+        },
+        {
+          "feature": "0_tPeak",
+          "importance": 0.01514,
+          "std": 0.00249,
+          "engineered": false
+        },
+        {
+          "feature": "post_rr_ms",
+          "importance": 0.01493,
+          "std": 0.00467,
+          "engineered": true
+        }
+      ]
+    },
+    "rf": {
+      "display_name": "Random Forest",
+      "inter_patient": {
+        "accuracy": 0.9248,
+        "balanced_accuracy": 0.5266,
+        "macro_f1": 0.5161,
+        "weighted_f1": 0.9195,
+        "per_class": {
+          "N": {
+            "precision": 0.9545,
+            "recall": 0.9671,
+            "f1-score": 0.9607,
+            "support": 44238.0
+          },
+          "SVEB": {
+            "precision": 0.4793,
+            "recall": 0.0757,
+            "f1-score": 0.1308,
+            "support": 1836.0
+          },
+          "VEB": {
+            "precision": 0.8884,
+            "recall": 0.9218,
+            "f1-score": 0.9048,
+            "support": 3221.0
+          },
+          "F": {
+            "precision": 0.0448,
+            "recall": 0.1418,
+            "f1-score": 0.068,
+            "support": 388.0
+          },
+          "Q": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            42782,
+            139,
+            145,
+            1172,
+            0
+          ],
+          [
+            1498,
+            139,
+            198,
+            1,
+            0
+          ],
+          [
+            240,
+            11,
+            2969,
+            1,
+            0
+          ],
+          [
+            302,
+            1,
+            30,
+            55,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "N",
+          "SVEB",
+          "VEB",
+          "F",
+          "Q"
+        ],
+        "abnormal_auc": 0.9204,
+        "train_seconds": 13.4
+      },
+      "feature_importance": [
+        {
+          "feature": "rr_norm_record",
+          "importance": 0.03785,
+          "std": 0.00366,
+          "engineered": true
+        },
+        {
+          "feature": "heart_rate_bpm",
+          "importance": 0.0323,
+          "std": 0.00153,
+          "engineered": true
+        },
+        {
+          "feature": "0_pre-RR",
+          "importance": 0.03173,
+          "std": 0.00163,
+          "engineered": false
+        },
+        {
+          "feature": "pre_rr_ms",
+          "importance": 0.02972,
+          "std": 0.00195,
+          "engineered": true
+        },
+        {
+          "feature": "rr_norm_local",
+          "importance": 0.02612,
+          "std": 0.00335,
+          "engineered": true
+        },
+        {
+          "feature": "rr_ratio",
+          "importance": 0.02488,
+          "std": 0.00708,
+          "engineered": true
+        },
+        {
+          "feature": "lead_r_diff",
+          "importance": 0.019,
+          "std": 0.00797,
+          "engineered": true
+        },
+        {
+          "feature": "1_qrs_morph1",
+          "importance": 0.01833,
+          "std": 0.00743,
+          "engineered": false
+        },
+        {
+          "feature": "0_post-RR",
+          "importance": 0.01758,
+          "std": 0.00456,
+          "engineered": false
+        },
+        {
+          "feature": "rr_diff_ms",
+          "importance": 0.01743,
+          "std": 0.00962,
+          "engineered": true
+        },
+        {
+          "feature": "local_rr_mean_ms",
+          "importance": 0.01693,
+          "std": 0.00185,
+          "engineered": true
+        },
+        {
+          "feature": "0_qrs_slope",
+          "importance": 0.01591,
+          "std": 0.00499,
+          "engineered": true
+        },
+        {
+          "feature": "1_qrs_morph4",
+          "importance": 0.01583,
+          "std": 0.00588,
+          "engineered": false
+        },
+        {
+          "feature": "0_rPeak",
+          "importance": 0.01576,
+          "std": 0.00622,
+          "engineered": false
+        },
+        {
+          "feature": "post_rr_norm_local",
+          "importance": 0.01438,
+          "std": 0.00691,
+          "engineered": true
+        },
+        {
+          "feature": "0_qrs_morph4",
+          "importance": 0.01371,
+          "std": 0.00321,
+          "engineered": false
+        },
+        {
+          "feature": "1_qrs_morph2",
+          "importance": 0.01363,
+          "std": 0.00119,
+          "engineered": false
+        },
+        {
+          "feature": "post_rr_ms",
+          "importance": 0.01307,
+          "std": 0.005,
+          "engineered": true
+        },
+        {
+          "feature": "1_t_r_ratio",
+          "importance": 0.01218,
+          "std": 0.00116,
+          "engineered": true
+        },
+        {
+          "feature": "0_r_s_ratio",
+          "importance": 0.01197,
+          "std": 0.00268,
+          "engineered": true
+        }
+      ]
+    },
+    "hgb": {
+      "display_name": "Gradient Boosting (HistGB)",
+      "inter_patient": {
+        "accuracy": 0.8473,
+        "balanced_accuracy": 0.7369,
+        "macro_f1": 0.5226,
+        "weighted_f1": 0.873,
+        "per_class": {
+          "N": {
+            "precision": 0.9681,
+            "recall": 0.8657,
+            "f1-score": 0.9141,
+            "support": 44238.0
+          },
+          "SVEB": {
+            "precision": 0.3759,
+            "recall": 0.2244,
+            "f1-score": 0.281,
+            "support": 1836.0
+          },
+          "VEB": {
+            "precision": 0.5992,
+            "recall": 0.9401,
+            "f1-score": 0.7319,
+            "support": 3221.0
+          },
+          "F": {
+            "precision": 0.0896,
+            "recall": 0.9175,
+            "f1-score": 0.1633,
+            "support": 388.0
+          },
+          "Q": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            38299,
+            649,
+            1786,
+            3504,
+            0
+          ],
+          [
+            1194,
+            412,
+            224,
+            6,
+            0
+          ],
+          [
+            54,
+            33,
+            3028,
+            106,
+            0
+          ],
+          [
+            15,
+            2,
+            15,
+            356,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "N",
+          "SVEB",
+          "VEB",
+          "F",
+          "Q"
+        ],
+        "abnormal_auc": 0.8964,
+        "train_seconds": 7.6
+      },
+      "feature_importance": [
+        {
+          "feature": "0_pre-RR",
+          "importance": 0.06679,
+          "std": 0.00459,
+          "engineered": false
+        },
+        {
+          "feature": "rr_norm_record",
+          "importance": 0.06167,
+          "std": 0.0038,
+          "engineered": true
+        },
+        {
+          "feature": "lead_r_diff",
+          "importance": 0.05534,
+          "std": 0.01276,
+          "engineered": true
+        },
+        {
+          "feature": "0_post-RR",
+          "importance": 0.03175,
+          "std": 0.0039,
+          "engineered": false
+        },
+        {
+          "feature": "1_st_interval",
+          "importance": 0.02205,
+          "std": 0.0043,
+          "engineered": false
+        },
+        {
+          "feature": "1_tPeak",
+          "importance": 0.02123,
+          "std": 0.00205,
+          "engineered": false
+        },
+        {
+          "feature": "post_rr_norm_local",
+          "importance": 0.01872,
+          "std": 0.00368,
+          "engineered": true
+        },
+        {
+          "feature": "rr_ratio",
+          "importance": 0.01852,
+          "std": 0.00094,
+          "engineered": true
+        },
+        {
+          "feature": "0_sPeak",
+          "importance": 0.01401,
+          "std": 0.00268,
+          "engineered": false
+        },
+        {
+          "feature": "rr_diff_ms",
+          "importance": 0.01253,
+          "std": 0.00139,
+          "engineered": true
+        },
+        {
+          "feature": "rr_norm_local",
+          "importance": 0.01043,
+          "std": 0.00298,
+          "engineered": true
+        },
+        {
+          "feature": "1_qrs_interval",
+          "importance": 0.00835,
+          "std": 0.00193,
+          "engineered": false
+        },
+        {
+          "feature": "0_qrs_interval",
+          "importance": 0.00754,
+          "std": 0.00384,
+          "engineered": false
+        },
+        {
+          "feature": "0_qt_interval",
+          "importance": 0.0068,
+          "std": 0.00102,
+          "engineered": false
+        },
+        {
+          "feature": "0_r_s_ratio",
+          "importance": 0.00569,
+          "std": 0.00151,
+          "engineered": true
+        },
+        {
+          "feature": "local_rr_mean_ms",
+          "importance": 0.00431,
+          "std": 0.00085,
+          "engineered": true
+        },
+        {
+          "feature": "0_st_interval",
+          "importance": 0.00421,
+          "std": 0.00117,
+          "engineered": false
+        },
+        {
+          "feature": "1_qt_interval",
+          "importance": 0.00393,
+          "std": 0.00184,
+          "engineered": false
+        },
+        {
+          "feature": "0_t_r_ratio",
+          "importance": 0.00282,
+          "std": 0.00072,
+          "engineered": true
+        },
+        {
+          "feature": "qtc_bazett_ms",
+          "importance": 0.00211,
+          "std": 0.00048,
+          "engineered": true
+        }
+      ]
+    }
+  },
+  "ablation": {
+    "logistic": {
+      "raw_only": {
+        "accuracy": 0.7319,
+        "balanced_accuracy": 0.7043,
+        "macro_f1": 0.5017,
+        "abnormal_auc": 0.8806
+      },
+      "raw_plus_engineered": {
+        "accuracy": 0.7249,
+        "balanced_accuracy": 0.5268,
+        "macro_f1": 0.458,
+        "abnormal_auc": 0.8941
+      },
+      "raw_only_recall": {
+        "N": 0.7423,
+        "SVEB": 0.3856,
+        "VEB": 0.764,
+        "F": 0.9253,
+        "Q": 0.0
+      },
+      "engineered_recall": {
+        "N": 0.738,
+        "SVEB": 0.2255,
+        "VEB": 0.8861,
+        "F": 0.2577,
+        "Q": 0.0
+      }
+    },
+    "hgb": {
+      "raw_only": {
+        "accuracy": 0.8515,
+        "balanced_accuracy": 0.562,
+        "macro_f1": 0.4846,
+        "abnormal_auc": 0.8318
+      },
+      "raw_plus_engineered": {
+        "accuracy": 0.8473,
+        "balanced_accuracy": 0.7369,
+        "macro_f1": 0.5226,
+        "abnormal_auc": 0.8964
+      },
+      "raw_only_recall": {
+        "N": 0.8764,
+        "SVEB": 0.1792,
+        "VEB": 0.968,
+        "F": 0.2242,
+        "Q": 0.0
+      },
+      "engineered_recall": {
+        "N": 0.8657,
+        "SVEB": 0.2244,
+        "VEB": 0.9401,
+        "F": 0.9175,
+        "Q": 0.0
+      }
+    }
+  },
+  "random_split": {
+    "logistic": {
+      "accuracy": 0.8581,
+      "balanced_accuracy": 0.888,
+      "macro_f1": 0.5979,
+      "abnormal_auc": 0.973
+    },
+    "hgb": {
+      "accuracy": 0.9851,
+      "balanced_accuracy": 0.9512,
+      "macro_f1": 0.9185,
+      "abnormal_auc": 0.9985
+    }
+  },
+  "external_incart": {
+    "logistic": {
+      "accuracy": 0.5822,
+      "balanced_accuracy": 0.5001,
+      "macro_f1": 0.3936,
+      "abnormal_auc": 0.939,
+      "recall": {
+        "N": 0.5732,
+        "SVEB": 0.8085,
+        "VEB": 0.6303,
+        "F": 0.4886,
+        "Q": 0.0
+      }
+    },
+    "rf": {
+      "accuracy": 0.9381,
+      "balanced_accuracy": 0.4404,
+      "macro_f1": 0.56,
+      "abnormal_auc": 0.982,
+      "recall": {
+        "N": 0.9793,
+        "SVEB": 0.3825,
+        "VEB": 0.6848,
+        "F": 0.1553,
+        "Q": 0.0
+      }
+    },
+    "hgb": {
+      "accuracy": 0.7936,
+      "balanced_accuracy": 0.5482,
+      "macro_f1": 0.4661,
+      "abnormal_auc": 0.9537,
+      "recall": {
+        "N": 0.8043,
+        "SVEB": 0.7768,
+        "VEB": 0.7169,
+        "F": 0.4429,
+        "Q": 0.0
+      }
+    },
+    "hgb_wrong_sampling_rate": {
+      "accuracy": 0.7826,
+      "balanced_accuracy": 0.4652,
+      "macro_f1": 0.4398,
+      "abnormal_auc": 0.9235
+    }
+  },
+  "best_model": "hgb",
+  "dataset": {
+    "name": "MIT-BIH Arrhythmia Database (Sakib et al. features)",
+    "n_beats": 100674,
+    "n_records": 44,
+    "n_train": 50991,
+    "n_test": 49683,
+    "class_counts": {
+      "N": 90083,
+      "SVEB": 2779,
+      "VEB": 7009,
+      "F": 803,
+      "Q": 0
+    },
+    "train_class_counts": {
+      "N": 45845,
+      "SVEB": 943,
+      "VEB": 3788,
+      "F": 415,
+      "Q": 0
+    },
+    "test_class_counts": {
+      "N": 44238,
+      "SVEB": 1836,
+      "VEB": 3221,
+      "F": 388,
+      "Q": 0
+    },
+    "n_q_beats_excluded": 15,
+    "n_raw_features": 32,
+    "redundant_columns_dropped": [
+      "1_pre-RR",
+      "1_post-RR",
+      "0_qrs_morph0",
+      "1_qrs_morph0"
+    ],
+    "n_engineered_features": 30,
+    "n_model_features": 58,
+    "train_records": [
+      101,
+      106,
+      108,
+      109,
+      112,
+      114,
+      115,
+      116,
+      118,
+      119,
+      122,
+      124,
+      201,
+      203,
+      205,
+      207,
+      208,
+      209,
+      215,
+      220,
+      223,
+      230
+    ],
+    "test_records": [
+      100,
+      103,
+      105,
+      111,
+      113,
+      117,
+      121,
+      123,
+      200,
+      202,
+      210,
+      212,
+      213,
+      214,
+      219,
+      221,
+      222,
+      228,
+      231,
+      232,
+      233,
+      234
+    ]
+  },
+  "trained_at": "2026-10-28T20:04:57+00:00"
+}
